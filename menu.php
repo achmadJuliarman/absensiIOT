@@ -1,11 +1,27 @@
-<nav class="navbar navbar-inverse">
-    <div class="navbar-header">
-        <a href="#" class="navbar-brand">ABSENSI</a>
-    </div>
-    <ul class="nav navbar-nav">
-        <li><a href="index.php">Home</a></li>
-        <li><a href="datakaryawan.php">Data Karyawan</a></li>
-        <li><a href="absensi.php">Rekapitulasi Absensi</a></li>
-        <li><a href="scan.php">Scan Kartu</a></li>
-    </ul>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="index.php">MyPegawai</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="datakaryawan.php">Data Karyawan <span class="sr-only">(current)</span></a>
+      </li>
+
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="absensi.php">Rekapitulasi Absensi <span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="scan.php">Scan Kartu <span class="sr-only">(current)</span></a>
+      </li> -->
+      
+  </div>
 </nav>

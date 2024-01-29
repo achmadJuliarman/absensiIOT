@@ -6,29 +6,69 @@
     include "koneksi.php";
 
     // jika tombol simpan di klik
+    // if(isset($_POST['btnSimpan'])){
+    //     $noKartu = $_POST['nokartu'];
+    //     $nama = $_POST['nama'];
+    //     $alamat = $_POST['alamat'];
+
+    //     $simpan = mysqli_query($konek, "INSERT INTO karyawan(nokartu, nama, alamat) VALUES ('$noKartu', '$nama', '$alamat')");
+
+    //     // jika berhasil tersimpan, tampilkan pesan
+    //     if($simpan) {
+    //         echo "
+    //             <script>
+    //                 alert('tersimpan');
+    //                 location.replace('datakaryawan.php');
+    //             </script>
+            
+    //         ";
+    //     } else {
+    //         echo "
+    //             <script>
+    //                 alert('tersimpan');
+    //                 location.replace('datakaryawan.php');
+    //             </script>
+    
+    //         ";
+    //     }
+    // }
+
     if(isset($_POST['btnSimpan'])){
+
         $noKartu = $_POST['nokartu'];
         $nama = $_POST['nama'];
         $alamat = $_POST['alamat'];
 
-        $simpan = mysqli_query($konek, "INSERT INTO karyawan(nokartu, nama, alamat) VALUES ('$noKartu', '$nama', '$alamat')");
-
-        // jika berhasil tersimpan, tampilkan pesan
-        if($simpan) {
+        // cek duplicat
+        $duplikat = mysqli_query($konek, "SELECT * FROM karyawan WHERE nokartu = '$noKartu';");
+        
+        if($duplikat->num_rows == 0){
+            $simpan = mysqli_query($konek, "INSERT INTO karyawan(nokartu, nama, alamat) VALUES ('$noKartu', '$nama', '$alamat')");
+            // jika berhasil tersimpan, tampilkan pesan
+            if($simpan) {
+                echo "
+                    <script>
+                        alert('tersimpan');
+                        location.replace('datakaryawan.php');
+                    </script>
+                
+                ";
+            } else {
+                echo "
+                    <script>
+                        alert('Data tersimpan');
+                        location.replace('datakaryawan.php');
+                    </script>
+        
+                ";
+            }
+        }else{
             echo "
                 <script>
-                    alert('tersimpan');
-                    location.replace('datakaryawan.php');
+                    alert('Data sudah ada');
+                    location.replace('tambah.php');
                 </script>
-            
-            ";
-        } else {
-            echo "
-                <script>
-                    alert('tersimpan');
-                    location.replace('datakaryawan.php');
-                </script>
-    
+        
             ";
         }
     }

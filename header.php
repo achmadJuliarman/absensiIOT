@@ -1,5 +1,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1,shringk-to-fit=no">
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
 <script type="text/javascript" src="jquery/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script src="assets/dist/js/bootstrap.bundle.min.js"></script>

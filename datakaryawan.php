@@ -17,7 +17,7 @@
                         <th style="width: 200px; text-align: center">No. Kartu</th>
                         <th style="width: 400px; text-align: center">Nama</th>
                         <th style="text-align: center">Alamat</th>
-                        <th style="width: 10opx; text-align: center">Aksi</th>
+                        <th style="text-align: center">Aksi</th>
                     </tr>
                 </thead>
 
@@ -36,9 +36,11 @@
                         <td> <?php echo $data['nokartu']; ?></td>
                         <td> <?php echo $data['nama']; ?></td>
                         <td><?php echo $data['alamat']; ?></td>
-                        <td>
-                            <a href="edit.php?id=<?php echo $data['id']?>">
-                            Edit</a> | <a href="hapus.php?id=<?php echo $data['id']?>">Hapus</a> 
+                        <td style="text-align: center">
+                            <a class="btn btn-primary" href="edit.php?id=<?php echo $data['id']?>">
+                            Edit</a> 
+                            <a class="btn btn-danger" href="hapus.php?id=<?php echo $data['id']?>">Hapus</a> 
+                            <!-- <a class="btn btn-success" href="monitorkaryawan.php?id=<?php echo $data['id']?>">Periksa</a> -->
                         </td>
                     </tr>
                     <?php } ?>
