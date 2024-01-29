@@ -40,7 +40,7 @@
                         <?php $sqlAbsen = 
                         mysqli_query($konek,
                             "SELECT COUNT(nokartu) AS jumlah, tanggal, MONTHNAME(tanggal) AS bulan, YEAR(tanggal) AS tahun 
-                            FROM absensi WHERE nokartu = '{$dp['nokartu']}' GROUP BY MONTH(tanggal);"); 
+                            FROM absensi WHERE nokartu = '{$dp['nokartu']}' GROUP BY tahun,bulan;"); 
                         ?>
                         <?php $dataAbsen = mysqli_fetch_all($sqlAbsen, MYSQLI_ASSOC); ?>
                         <?php $totalAbsenBulanan = []; ?>
